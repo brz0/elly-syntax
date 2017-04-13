@@ -1,6 +1,6 @@
 @import 'syntax-variables';
 
-atom-text-editor, :host {
+atom-text-editor, atom-text-editor {
     background-color: @syntax-background-color;
     color: @syntax-text-color;
 
@@ -56,90 +56,89 @@ atom-text-editor, :host {
   }
 
   // Fancy comments, because comments should stand out, or be deleted
-  .comment {
-    color: black;
-    background-color: @yellow;
-    box-shadow: 0 0 5px @yellow;
-    border-radius: 3px;
+  .syntax--comment {
+    background-color: black;
+    color: #9e9e9e;
+    box-shadow: none;
 
     // Nested comments shouldn't double-box-shadow
-    .comment {
+    .syntax--comment {
       box-shadow: none;
       background-color: transparent;
     }
   }
-  .comment.whitespace {
+  .syntax--comment.syntax--whitespace {
     background-color: transparent;
     box-shadow: none;
   }
 
-  .string {
+  .syntax--string {
     color: @yellow;
   }
 
-  .constant.numeric,
-  .constant.language,
-  .constant.character,
-  .constant.other {
+  .syntax--constant.syntax--numeric,
+  .syntax--constant.syntax--language,
+  .syntax--constant.syntax--character,
+  .syntax--constant.syntax--other {
     color: @indigo;
   }
 
-  .keyword {
+  .syntax--keyword {
     color: @red;
   }
 
-  .storage {
+  .syntax--storage {
     color: @red;
   }
 
-  .storage.type {
+  .syntax--storage.syntax--type {
     font-style: italic;
     color: @blue;
   }
 
-  .entity.name.class {
+  .syntax--entity.syntax--name.syntax--class {
     text-decoration: underline;
     color: @green;
   }
 
-  .entity.other.inherited-class {
+  .syntax--entity.syntax--other.syntax--inherited-class {
     font-style: italic;
     text-decoration: underline;
     color: @green;
   }
 
-  .entity.name.function {
+  .syntax--entity.syntax--name.syntax--function {
     color: @green;
   }
 
-  .entity.name.instance {
+  .syntax--entity.syntax--name.syntax--instance {
     color: @blue;
   }
 
-  .variable.parameter {
+  .syntax--variable.syntax--parameter {
     font-style: italic;
     color: @orange;
   }
 
-  .entity.name.tag {
+  .syntax--entity.syntax--name.syntax--tag {
     color: @red;
   }
 
-  .entity.other.attribute-name {
+  .syntax--entity.syntax--other.syntax--attribute-name {
     color: @green;
   }
 
-  .support.constant, .support.function {
+  .syntax--support.syntax--constant, .syntax--support.syntax--function {
     color: @blue;
   }
 
-  .support.type,
-  .support.class {
+  .syntax--support.syntax--type,
+  .syntax--support.syntax--class {
     font-style: italic;
     color: @blue;
   }
 
-  .invalid {
+  .syntax--invalid {
     color: @white;
     background-color: @red;
   }
